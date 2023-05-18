@@ -6,12 +6,10 @@ namespace HitachiUiTest.StepDefinitions
     [Binding]
     public sealed class WhenStepDefs : BasePage
     {
-        private readonly ScenarioContext _scenarioContext;
 
-        public WhenStepDefs(IWebDriver driver, ScenarioContext scenarioContext)
+        public WhenStepDefs(IWebDriver driver)
         {
             Driver = driver;
-            _scenarioContext = scenarioContext;
         }
 
         [When(@"I choose to enter '([^']*)' as my search text")]

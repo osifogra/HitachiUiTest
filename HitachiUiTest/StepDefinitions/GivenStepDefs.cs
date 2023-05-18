@@ -7,12 +7,9 @@ namespace HitachiUiTest.StepDefinitions
     [Binding]
     public sealed class GivenStepDefs : BasePage
     {
-        private readonly ScenarioContext _scenarioContext;
-
-        public GivenStepDefs(IWebDriver driver, ScenarioContext scenarioContext)
+        public GivenStepDefs(IWebDriver driver)
         {
             Driver = driver;
-            _scenarioContext = scenarioContext;
         }
 
         [Given(@"I navigate to Hitachi site")]
@@ -20,9 +17,5 @@ namespace HitachiUiTest.StepDefinitions
         {
             Driver.Navigate().GoToUrl(ConfigManager.WebSiteUrl);
         }
-
-
-
-
     }
 }

@@ -7,12 +7,10 @@ namespace HitachiUiTest.StepDefinitions
     [Binding]
     public sealed class ThenStepDefs : BasePage
     {
-        private readonly ScenarioContext _scenarioContext;
 
-        public ThenStepDefs(IWebDriver driver, ScenarioContext scenarioContext)
+        public ThenStepDefs(IWebDriver driver)
         {
             Driver = driver;
-            _scenarioContext = scenarioContext;
         }
 
         [Then(@"I should see '([^']*)' search result return")]

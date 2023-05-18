@@ -2,8 +2,6 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using TechTalk.SpecFlow;
 
 namespace HitachiUiTest.UtilityHelper
 {
@@ -11,29 +9,10 @@ namespace HitachiUiTest.UtilityHelper
     public sealed class Hooks : DriverManager
     {
         private readonly IObjectContainer _objectContaniner;
-        //private readonly ScenarioContext scenarioContext;
 
-        public Hooks()
-        {
-        }
-
-        public Hooks(IObjectContainer objectContaniner, ScenarioContext scenarioContext)
+        public Hooks(IObjectContainer objectContaniner)
         {
             _objectContaniner = objectContaniner;
-            //this.scenarioContext = scenarioContext;
-        }
-
-
-        [BeforeScenario]
-        public void BeforeScenario()
-        {
-            InitializeBrowser();
-        }
-
-        [AfterScenario]
-        public void AfterScenario()
-        {
-            CloseBrowser();
         }
 
         public void InitializeBrowser()
@@ -45,11 +24,6 @@ namespace HitachiUiTest.UtilityHelper
                     case "chrome":
                         Console.WriteLine("Opening Chrome Browser");
                         Driver = new ChromeDriver();
-                        break;
-
-                    case "firefox":
-                        Console.WriteLine("Opening Firefox Browser");
-                        Driver = new FirefoxDriver();
                         break;
 
                     default:
@@ -73,6 +47,18 @@ namespace HitachiUiTest.UtilityHelper
                 Driver.Quit();
                 Driver = null;
             }
+        }
+
+        [BeforeScenario]
+        public void BeforeScenario()
+        {
+            InitializeBrowser();
+        }
+
+        [AfterScenario]
+        public void AfterScenario()
+        {
+            CloseBrowser();
         }
     }
 }

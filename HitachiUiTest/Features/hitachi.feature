@@ -1,7 +1,7 @@
 ﻿Feature: Hitachi search
 
 #The Problem:
-#We want to automate crucial user workflows for https://global.hitachi-solutions.com/ site.
+#We want to automate crucial user work flows for https://global.hitachi-solutions.com/ site.
 #We need to cover the following functionalities :
 
 #User can successfully navigate to the site
